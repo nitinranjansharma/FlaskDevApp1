@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Preprocess Steps</h1>
+
+     <!-- Main Input For Receiving Query to our process flow -->
+    <form action="{{ url_for('col_define')}}"method="post">
+    	<input type="text" name="numericalCol_req" placeholder="Numerical Column Names" input:optional />
+      <input type="text" name="categoricalCol_req" placeholder="Categorical Column Names" input:optional />
+      <input type="text" name="categoricalCol_req" placeholder="Flag Column Names" input:optional />
+		<input type="text" name="autoDetect_req" placeholder="Auto Detect" required="required" />
+		
+        <button type="submit" class="btn btn-primary btn-block btn-large">Prepare Data</button>
+    </form>
+
+   <br> 
+   <br>
+   {{ "Success" }}
+
+ </div>
+
+
+</body>
+</html>
